@@ -1,0 +1,52 @@
+.show{
+    opacity: 1;
+    transition:  all 1s ease-in;
+}
+/* .hide{
+  opacity: 0;
+  transition:  all 1s ease-in;
+} */
+/* forwards保留动画最后一帧*/
+.hide{
+animation: hide-item 1s ease-in forwards;
+}
+@keyframes hide-item{
+    0%{
+        opacity: 1;
+        color: red;
+    }
+    50%{
+        opacity: .5;
+        color: green;
+    }
+    100%{
+        opacity: 0;
+        color: blue;
+    }
+}
+/* .fade-appear 刚进入页面就有渐隐渐显功能 */
+.fade-enter .fade-appear{
+    /*入场的第一个时刻*/
+    opacity: 0;
+} 
+
+.fade-enter-active  .fade-appear-active{
+     /*入场第二个时刻到入场动画完成之前的时刻*/
+    opacity: 1;
+    transition:  all 1s ease-in;
+} 
+.fade-enter-done{
+     /*入场动画执行完成*/
+    opacity: 1;
+    color: red;
+}
+.fade-exit{
+    opacity: 1;
+} 
+.fade-exit-active{
+    opacity: 0;
+    transition:  all 1s ease-in;
+} 
+.fade-exit-done{
+    opacity: 0;
+}

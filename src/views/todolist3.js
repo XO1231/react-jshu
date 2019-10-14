@@ -15,7 +15,7 @@ class TodoList extends Component {
         this.handleInputChange = this.handleInputChange.bind(this)
     }
     render() {
-        console.log('render')
+        // console.log('render')
         return (
             <Fragment>
                 <div>
