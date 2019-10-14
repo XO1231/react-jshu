@@ -31,6 +31,9 @@ class AntdUI extends React.Component{
         //固定写法，获取state的值 1
         this.state =store.getState()
         this.handleInputChange = this.handleInputChange.bind(this)
+        this.handleStoreChange=this.handleStoreChange.bind(this)
+        this.handleBtnClick =this.handleBtnClick.bind(this)
+        this.handleItemDelete = this.handleItemDelete.bind(this)
         store.subscribe(this.handleStoreChange) //第四步
        
     }
@@ -42,14 +45,14 @@ class AntdUI extends React.Component{
                 style={{ width: "300px", marginRight: "10px" }}
                 onChange ={this.handleInputChange}
                 ></Input>
-                <Button type="primary" onClick={this.props.handleBtnClick}> 提交</Button>
+                <Button type="primary" onClick={this.handleBtnClick}> 提交</Button>
             </div>
             <List
                 style={{ marginTop: '10px', width: '300px' }}
                 bordered
                 dataSource={this.state.list}
                 renderItem={(item,index)=> (
-                    <List.Item onClick = {(index) =>{this.props.handleItemDelete(index)}}>
+                    <List.Item onClick = {(index) =>{this.handleItemDelete(index)}}>
                         {item}
                     </List.Item>
                 )}
@@ -66,8 +69,25 @@ class AntdUI extends React.Component{
         // const action = getInputChangeAction(e.target.value)
         store.dispatch(action); //第三步
     }
+    handleBtnClick(){
+        const action ={
+            type:'add_item',       
+        }
+        // 把话传给store
+        // const action = getAddToDoItem()
+        store.dispatch(action);
+    }
+    handleItemDelete(index){
+        const action ={
+            type:'del_item',
+            index
+        }
+        // const action = getDeleteToDoItem(index)
+        store.dispatch(action);
+    }
     handleStoreChange(){
-        console.log(111)
+        console.log(store.getState())
+        //重新获取store里state的值
         this.setState(store.getState()) 
         //第五步
     }

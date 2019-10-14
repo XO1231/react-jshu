@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import "antd/dist/antd.css";
-import store from './store';
+import store from '../store/index2';
 // import axios from 'axios';
-import {getInputChangeAction,getAddToDoItem,getDeleteToDoItem, sagaListAction,} from './store/actionCreators'
-import AntdUI from './AntdUI'
+import {getInputChangeAction,getAddToDoItem,getDeleteToDoItem, sagaListAction,} from '../store/actionCreators'
+import AntdUI from './antd2'
 // import { initListAction } from './store/actionCreators';
 
 class Antd extends Component {
@@ -51,8 +51,7 @@ class Antd extends Component {
     }
     handleBtnClick(){
         // const action ={
-        //     type:ADD_TODO_ITEM,
-            
+        //     type:ADD_TODO_ITEM,       
         // }
         // 把话传给store
         const action = getAddToDoItem()

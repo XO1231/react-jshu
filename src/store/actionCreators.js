@@ -1,7 +1,5 @@
 import { CHANGE_INPUT_VALUE,ADD_TODO_ITEM,DELETE_IODO_ITEM,INIT_LIST_ACTION,SAGA_LIST_ACTION } from "./actionType";
 // import axios from 'axios';
-
-
 export const getInputChangeAction = (value) =>({
     type: CHANGE_INPUT_VALUE,
     value
