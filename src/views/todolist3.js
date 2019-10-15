@@ -97,11 +97,11 @@ class TodoList extends Component {
        })
     }
     componentDidMount() {
-        console.log(33)
+       
       }
     
       componentWillUnmount() {
-        console.log(11)
+       
       }
 }
 export default TodoList;
