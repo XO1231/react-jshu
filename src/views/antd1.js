@@ -69,7 +69,7 @@ class AntdUI extends React.Component{
     handleStoreChange(){
         console.log(111)
         this.setState(store.getState()) 
-        //第五步
+         //第五步
     }
 }
 export default AntdUI
