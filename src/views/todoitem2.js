@@ -2,7 +2,7 @@ import React ,{Component} from 'react';
 class Test extends Component {
     render() {
         // 当父组件的render函数被运行时,它的子组件render将被重新运行
-        console.log('Test render')
+        // console.log('Test render')
         return <div> {this.props.content}</div>    
     }
 }

@@ -20,7 +20,6 @@ class TodoList extends Component {
                     <label htmlFor="insertArea">输入内容</label>
                     <input id="insertArea"
                         className='input' type="text"
-
                         value={this.state.inputValue}
                         onChange={this.handleInputChange.bind(this)}
                         // ref={(input) => {

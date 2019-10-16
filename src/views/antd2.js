@@ -1,7 +1,7 @@
 import React from 'react';
 import { Input, Button, List} from 'antd';
 import "antd/dist/antd.css";
-// 无状态组件
+// 无状态组件  当组件只有一个render函数 就可以使用无状态组件（一个函数，接受一个props，返回js） 
 const AntdUI =(props) =>{
     return <div>
     <div style={{ margin: "10px" }}>
@@ -10,7 +10,7 @@ const AntdUI =(props) =>{
         style={{ width: "300px", marginRight: "10px" }}
         onChange ={props.handleInputChange}
         ></Input>
-        <Button type="primary" onClick={props.handleBtnClick}> 提交</Button>
+        <Button type="primary" onClick={props.handleBtnClick}>提交</Button>
     </div>
     <List
         style={{ marginTop: '10px', width: '300px' }}

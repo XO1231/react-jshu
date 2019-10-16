@@ -2,29 +2,6 @@ import React from 'react';
 import { Input, Button, List} from 'antd';
 import "antd/dist/antd.css";
 import store from '../store';
-// 无状态组件
-// const AntdUI =(props) =>{
-//     return <div>
-//     <div style={{ margin: "10px" }}>
-//         <Input value = {props.inputValue} 
-//         placeholder="todo" 
-//         style={{ width: "300px", marginRight: "10px" }}
-//         onChange ={props.handleInputChange}
-//         ></Input>
-//         <Button type="primary" onClick={props.handleBtnClick}> 提交</Button>
-//     </div>
-//     <List
-//         style={{ marginTop: '10px', width: '300px' }}
-//         bordered
-//         dataSource={props.list}
-//         renderItem={(item,index)=> (
-//             <List.Item onClick = {() =>{props.handleItemDelete(index)}}>
-//                 {item}
-//             </List.Item>
-//         )}
-//     />
-// </div>
-// }
 class AntdUI extends React.Component{
     constructor(props){
         super(props)
@@ -33,7 +10,6 @@ class AntdUI extends React.Component{
         this.handleInputChange = this.handleInputChange.bind(this)
         this.handleStoreChange=this.handleStoreChange.bind(this)
         this.handleBtnClick =this.handleBtnClick.bind(this)
-        this.handleItemDelete = this.handleItemDelete.bind(this)
         store.subscribe(this.handleStoreChange) //第四步
        
     }
@@ -52,7 +28,7 @@ class AntdUI extends React.Component{
                 bordered
                 dataSource={this.state.list}
                 renderItem={(item,index)=> (
-                    <List.Item onClick = {(index) =>{this.handleItemDelete(index)}}>
+                    <List.Item onClick = {this.handleItemDelete.bind(this,index)}>
                         {item}
                     </List.Item>
                 )}
